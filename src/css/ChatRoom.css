@@ -1,0 +1,88 @@
+.ChatRoom {
+    width: calc(100vw - 300px);
+}
+
+.chat{
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sendMessageForm {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: sticky;
+    bottom: 0px;
+}
+
+.sendMessageForm form {
+    display: flex;
+    justify-content: center;
+}
+
+.sendMessageForm form input{
+    font-size: 1rem;
+    background-color: rgb(226, 226, 226);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+}
+
+.sendMessageForm form input{
+    width: 80%;
+}
+
+.topBar {
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.chatRoomName {
+    margin-left: 10px;
+    font-weight: 800;
+}
+
+.sendButton {
+    margin-left: 15px;
+    background-color: rgb(22, 125, 221);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.chatIcon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 25px;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.disabled {
+    cursor: default;
+}
+
+@media (max-width: 700px) {
+
+    .ChatRoom {
+        width: 100vw;
+    }
+    .chat {
+        height: calc(100vh - 250px);
+    }
+}
