@@ -29,7 +29,7 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path="/">
+          <Route path="/">
             <SideBar
             firebase={firebase}
             auth={auth}
