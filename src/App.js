@@ -36,7 +36,6 @@ function App() {
             firestore={firestore}
             user={user}
             />
-
             <ChatRoom
               name="General Chat"
               firebase={firebase}
