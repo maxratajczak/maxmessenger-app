@@ -1,6 +1,7 @@
 import './App.css';
 import SideBar from './components/SideBar';
 import ChatRoom from './components/ChatRoom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 import firebase from 'firebase/compat/app'
 import { useAuthState } from 'react-firebase-hooks/auth'
@@ -25,22 +26,28 @@ function App() {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="App">
-      <SideBar
-      firebase={firebase}
-      auth={auth}
-      firestore={firestore}
-      user={user}
-      />
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/">
+            <SideBar
+            firebase={firebase}
+            auth={auth}
+            firestore={firestore}
+            user={user}
+            />
 
-      <ChatRoom
-        name="General Chat"
-        firebase={firebase}
-        auth={auth}
-        firestore={firestore}
-        user={user}
-      />
+            <ChatRoom
+              name="General Chat"
+              firebase={firebase}
+              auth={auth}
+              firestore={firestore}
+              user={user}
+            />
+          </Route>
+        </Switch>
     </div>
+    </Router>
   );
 }
 

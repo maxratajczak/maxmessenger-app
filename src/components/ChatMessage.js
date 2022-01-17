@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import '../css/ChatMessage.css'
 
 const ChatMessage = (props) => {
@@ -14,7 +13,7 @@ const ChatMessage = (props) => {
 
     var date = " ";
     if(createdAt) {
-      var date = createdAt.toDate().toLocaleString('en-US', {
+      date = createdAt.toDate().toLocaleString('en-US', {
         hour: 'numeric',
         minute: "numeric",
         hour12: true
