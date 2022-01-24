@@ -25,6 +25,7 @@ const firestore = firebase.firestore();
 function App() {
   const [user] = useAuthState(auth);
 
+
   return (
     <Router>
       <div className="App">

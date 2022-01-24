@@ -1,5 +1,5 @@
 import { useCollectionData } from 'react-firebase-hooks/firestore'
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ChatMessage from './ChatMessage';
 import '../css/ChatRoom.css'
 import chatIcon from '../g-icon.png'
@@ -11,6 +11,10 @@ const ChatRoom = ({firebase, auth, firestore, user, name}) => {
     const [messages] = useCollectionData(query, {idField: 'id'});
     const [formValue, setFormValue] = useState("");
     const dummyDiv = useRef();
+
+    useEffect(() => {
+        dummyDiv.current.scrollIntoView();
+    })
     
     const sendMessage = async(e) => {
         e.preventDefault();
